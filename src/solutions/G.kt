@@ -1,14 +1,12 @@
 package solutions
 
 import java.io.File
-import java.lang.Math.sqrt
-import java.math.BigInteger
 
 fun main(args: Array<String>) {
-    val h = H()
-    h.run("h.txt","out_h.txt")
+    val g = G()
+    g.run("g.txt","out_g.txt")
 }
-class H {
+class G {
 
     fun run(input : String, output : String) {
         createFile(output, calculator(readFile(input)))
@@ -22,11 +20,14 @@ class H {
     private fun calculator(arr: ArrayList<String>): String {
         var nod = nod(arr[0].toInt(),arr[1].toInt())
         for (i in arr){
-            nod = nod(nod,i.toInt())
+            if(i.toInt() != 0) {
+                nod = nod(nod,i.toInt())
+            }else {
+                return nod.toString()
+            }
         }
         return nod.toString()
     }
-
 
     private fun nod(a_ : Int , b_ : Int) : Int{
         var a = a_
