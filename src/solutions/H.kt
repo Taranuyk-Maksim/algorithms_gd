@@ -5,10 +5,10 @@ import java.lang.Math.sqrt
 import java.math.BigInteger
 
 fun main(args: Array<String>) {
-    val f = F()
-    f.run("f.txt","out_f.txt")
+    val h = H()
+    h.run("h.txt","out_h.txt")
 }
-class F {
+class H {
 
     fun run(input : String, output : String) {
         createFile(output, calculator(readFile(input)))
@@ -21,7 +21,10 @@ class F {
 
     private fun calculator(arr: ArrayList<String>): String {
         val n1 = nod(arr[0].toInt(),arr[1].toInt())
-        return nod(n1,arr[2].toInt()).toString()
+        for (i in arr){
+            return nod(n1,i.toInt()).toString()
+        }
+        return ""
     }
 
 
