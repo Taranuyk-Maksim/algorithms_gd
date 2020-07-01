@@ -1,43 +1,27 @@
 package solutions
 
-import java.io.File
-import java.math.BigInteger
-
 fun main(args: Array<String>) {
     val b = B()
-    b.run("b.txt","out_b.txt")
+    b.run("b.txt", "out_b.txt")
 }
+
 class B {
 
-    fun run(inp : String, out : String) {
-        createFile(out, calculator(readFile(inp)))
+    fun run(inp: String, out: String) {
+        createFile(out, getArrayOfPrimeNumbers(readFile(inp)))
     }
 
-    private fun createFile(name: String, list : ArrayList<String>) {
-        val f = File("src/outputs/$name")
-        f.writeText(list.toString())
-    }
-
-    private fun calculator(arr: ArrayList<String>): ArrayList<String> {
-        val list : ArrayList<String> = ArrayList()
-        for (i in 0..arr[0].toInt()) {
-            if (isPrime(i) && i > 1) {
+    private fun getArrayOfPrimeNumbers(arr: ArrayList<String>): ArrayList<String> {
+        val list: ArrayList<String> = ArrayList()
+        var i = 0
+        while (true) {
+            i++
+            if (isPrimeNumber(i)) {
                 list.add(i.toString())
             }
+            if (list.size == arr[0].toInt()) {
+                return list
+            }
         }
-        return list
-    }
-
-    private fun isPrime(x: Int): Boolean {
-        val bg: BigInteger = BigInteger.valueOf(x.toLong())
-        return bg.isProbablePrime(x)
-    }
-
-    private fun readFile(fileName: String): ArrayList<String> {
-        val list: ArrayList<String> = ArrayList()
-        File("src/tests/$fileName").forEachLine {
-            list.add(it)
-        }
-        return list
     }
 }
