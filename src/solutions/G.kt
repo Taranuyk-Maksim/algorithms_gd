@@ -8,10 +8,10 @@ fun main(args: Array<String>) {
 class G {
 
     fun run(input: String, output: String) {
-        createFile(output, calculator(readFile(input)))
+        createFile(output, getNodSequenceSfNumbers(readFile(input)))
     }
 
-    private fun calculator(arr: ArrayList<String>): String {
+    private fun getNodSequenceSfNumbers(arr: ArrayList<String>): String {
         var nod = nod(arr[0].toInt(), arr[1].toInt())
         for (i in arr) {
             if (i.toInt() != 0) {
