@@ -1,4 +1,4 @@
-package solutions
+package solutions.primes
 
 fun main(args: Array<String>) {
     val b = B()
