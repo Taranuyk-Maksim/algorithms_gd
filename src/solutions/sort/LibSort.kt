@@ -1,7 +1,6 @@
 package solutions.sort
 
-import solutions.sort.Num
-
+var exchanges = 0
 fun quickSort(items: List<Int>): List<Int> {
     if (items.count() < 2) {
         return items
@@ -13,7 +12,7 @@ fun quickSort(items: List<Int>): List<Int> {
     val less = items.filter { it < pivot }
 
     val greater = items.filter { it > pivot }
-
+    exchanges += 1
     return quickSort(less) + equal + quickSort(greater)
 }
 
@@ -89,4 +88,12 @@ fun getListNums(str: String): List<Num> {
         }
     }
     return numbers
+}
+
+fun getQuantityKExchanges(i: String): Int {
+    return if (exchanges > i.toInt()) {
+        -1
+    } else {
+        exchanges
+    }
 }
