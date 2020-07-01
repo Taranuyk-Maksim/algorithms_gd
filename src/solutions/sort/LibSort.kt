@@ -32,6 +32,21 @@ fun quickSortNumbs(items: List<Num>): List<Num> {
     return quickSortNumbs(less) + equal + quickSortNumbs(greater)
 }
 
+fun quickSortNumbsSumOfElements(items: List<Num>): List<Num> {
+    if (items.count() < 2) {
+        return items
+    }
+    val pivot = items[items.count() / 2]
+
+    val equal = items.filter { it.getAbs() == pivot.getSum() }
+
+    val less = items.filter { it.getAbs() < pivot.getSum() }
+
+    val greater = items.filter { it.getAbs() > pivot.getSum() }
+
+    return quickSortNumbs(less) + equal + quickSortNumbs(greater)
+}
+
 fun getListIntNumbers(str: String): ArrayList<Int> {
 
     val numbers = arrayListOf<Int>()

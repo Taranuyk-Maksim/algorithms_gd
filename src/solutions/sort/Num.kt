@@ -11,4 +11,12 @@ class Num(private val n: Int) {
     fun getNum(): Int {
         return n
     }
+
+    fun getSum (): Int {
+        var sum = 0
+        for(i in getAbs().toString().toCharArray()) {
+            sum +=i.toString().toInt()
+        }
+        return sum
+    }
 }
