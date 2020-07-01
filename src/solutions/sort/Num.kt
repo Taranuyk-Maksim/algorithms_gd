@@ -8,7 +8,7 @@ class Num(private val n: Int) {
         return abs(n)
     }
 
-    fun getNum(): Int{
+    fun getNum(): Int {
         return n
     }
 }
