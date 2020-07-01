@@ -19,6 +19,28 @@ fun nod(v1: Int, v2: Int): Int {
     return a
 }
 
+fun getListIntNumbers(str: String): ArrayList<Int> {
+
+    val numbers = arrayListOf<Int>()
+    val buf = StringBuilder()
+    val chars = str.toCharArray()
+
+    for (i in 0..str.length) {
+        try {
+            val ch = chars[i].toString()
+            if (ch !=" ") {
+                buf.append(ch)
+            }else {
+                numbers.add(buf.toString().toInt())
+                buf.clear()
+            }
+        } catch (ex: ArrayIndexOutOfBoundsException) {
+            numbers.add(buf.toString().toInt())
+        }
+    }
+    return numbers
+}
+
 fun readFile(fileName: String): ArrayList<String> {
     val list: ArrayList<String> = ArrayList()
     File("src/tests/$fileName").forEachLine {
@@ -39,4 +61,23 @@ fun createFile(path: String, i: Int) {
 fun createFile(name: String, list: ArrayList<String>) {
     val f = File("src/outputs/$name")
     f.writeText(list.toString())
+}
+fun createFile(name: String, list: List<Int>) {
+    val f = File("src/outputs/$name")
+    f.writeText(list.toString())
+}
+
+fun quickSort(items: List<Int>): List<Int> {
+    if (items.count() < 2) {
+        return items
+    }
+    val pivot = items[items.count() / 2]
+
+    val equal = items.filter { it == pivot }
+
+    val less = items.filter { it < pivot }
+
+    val greater = items.filter { it > pivot }
+
+    return quickSort(less) + equal + quickSort(greater)
 }
