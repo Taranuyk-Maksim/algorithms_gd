@@ -1,4 +1,7 @@
-package solutions
+package solutions.sort
+
+import solutions.primes.createFile
+import solutions.primes.readFile
 
 fun main(args: Array<String>) {
     val sortA = SortA()
