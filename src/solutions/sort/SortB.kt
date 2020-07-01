@@ -17,7 +17,7 @@ class SortB {
         )
     }
 
-    fun createOutputList(list: List<Num>): List<Int> {
+    private fun createOutputList(list: List<Num>): List<Int> {
         val arr = arrayListOf<Int>()
         for (a in list) {
             arr.add(a.getNum())
