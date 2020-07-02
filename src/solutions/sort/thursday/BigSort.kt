@@ -24,6 +24,7 @@ class BigSort {
         runQuickSort(getListIntNumbers(list[3]), out)
         runMergeSort(getListIntNumbers(list[4]), out)
         runSelectionSort(getListIntNumbers(list[5]), out)
+        runSellSort(getListIntNumbers(list[6]),out)
     }
 
     //O(n^2)
@@ -59,6 +60,11 @@ class BigSort {
     private fun runSelectionSort(list: ArrayList<Int>, out: String) {
         selectionSort(list)
         createFileAndAppendText(out, list, "SelectionSort")
+    }
+    // O(n^2)
+    private fun runSellSort(list: ArrayList<Int>, out: String) {
+        shellSort(list)
+        createFileAndAppendText(out, list, "ShellSort")
     }
 
 }
