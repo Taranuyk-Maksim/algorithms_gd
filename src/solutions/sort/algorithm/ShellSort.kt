@@ -1,4 +1,4 @@
-package solutions.sort.algoritm
+package solutions.sort.algorithm
 
 import java.util.Collections.swap
 

@@ -1,4 +1,4 @@
-package solutions.sort.algoritm
+package solutions.sort.algorithm
 
 fun mergeSort(array: ArrayList<Int>, left: Int, right: Int) : ArrayList<Int>{
     if (right <= left) return array

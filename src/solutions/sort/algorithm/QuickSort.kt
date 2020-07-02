@@ -1,4 +1,4 @@
-package solutions.sort.algoritm
+package solutions.sort.algorithm
 
 fun partition(array: ArrayList<Int>, begin: Int, end: Int): Int {
     var counter = begin

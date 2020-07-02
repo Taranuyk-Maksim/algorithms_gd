@@ -1,4 +1,4 @@
-package solutions.sort.algoritm
+package solutions.sort.algorithm
 
 fun heapify(array: ArrayList<Int>, length: Int, i: Int) {
     val leftChild = 2 * i + 1

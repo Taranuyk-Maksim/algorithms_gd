@@ -1,4 +1,4 @@
-package solutions.sort.algoritm
+package solutions.sort.algorithm
 
 fun selectionSort(array: ArrayList<Int>) : ArrayList<Int>{
     for (i in array.indices) {

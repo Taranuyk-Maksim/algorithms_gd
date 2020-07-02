@@ -1,4 +1,4 @@
-package solutions.sort.algoritm
+package solutions.sort.algorithm
 
 fun bubbleSort(array: ArrayList<Int>) : ArrayList<Int> {
     var sorted = false

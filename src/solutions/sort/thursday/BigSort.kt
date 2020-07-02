@@ -2,7 +2,7 @@ package solutions.sort.thursday
 
 import solutions.primes.createFileAndAppendText
 import solutions.primes.readFile
-import solutions.sort.algoritm.*
+import solutions.sort.algorithm.*
 import solutions.sort.wednesday.getListIntNumbers
 
 fun main(args: Array<String>) {
@@ -52,7 +52,7 @@ class BigSort {
 
     // O(n^2)
     private fun runQuickSort(list: ArrayList<Int>, out: String) {
-        solutions.sort.algoritm.quickSort(list, 0, list.size - 1)
+        solutions.sort.algorithm.quickSort(list, 0, list.size - 1)
         createFileAndAppendText(out, list, "QuickSort")
     }
     // O(n^2)
