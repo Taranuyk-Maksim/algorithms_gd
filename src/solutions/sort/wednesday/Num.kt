@@ -1,4 +1,4 @@
-package solutions.sort.old
+package solutions.sort.wednesday
 
 import kotlin.math.abs
 

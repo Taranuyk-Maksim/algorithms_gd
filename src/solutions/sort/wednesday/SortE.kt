@@ -1,4 +1,4 @@
-package solutions.sort.old
+package solutions.sort.wednesday
 
 import solutions.primes.createFile
 import solutions.primes.readFile

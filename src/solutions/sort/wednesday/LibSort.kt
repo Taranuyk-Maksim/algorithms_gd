@@ -1,4 +1,4 @@
-package solutions.sort.old
+package solutions.sort.wednesday
 
 var exchanges = 0
 fun quickSort(items: List<Int>): List<Int> {
