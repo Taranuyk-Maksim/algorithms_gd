@@ -10,7 +10,7 @@ fun mergeSort(array: ArrayList<Int>, left: Int, right: Int) : ArrayList<Int>{
 }
 
 fun merge(array: ArrayList<Int>, left: Int, mid: Int, right: Int) {
-    // вычисляем длину
+    // calculate the length
     val lengthLeft = mid - left + 1
     val lengthRight = right - mid
 
@@ -18,17 +18,17 @@ fun merge(array: ArrayList<Int>, left: Int, mid: Int, right: Int) {
     val leftArray = IntArray(lengthLeft)
     val rightArray = IntArray(lengthRight)
 
-    // копируем отсортированные массивы во временные
+    // create temporary subarrays
     for (i in 0 until lengthLeft) leftArray[i] = array[left + i]
     for (i in 0 until lengthRight) rightArray[i] = array[mid + i + 1]
 
-    // итераторы содержат текущий индекс временного подмассива
+    // iterators contain the current temporary subarray index
     var leftIndex = 0
     var rightIndex = 0
 
-    // копируем из leftArray и rightArray обратно в массив
+    // copy from leftArray and rightArray back to the array
     for (i in left until right + 1) {
-        // если остаются нескопированные элементы в R и L, копируем минимальный
+        // if there are un copied elements in R and L, copy the minimum
         if (leftIndex < lengthLeft && rightIndex < lengthRight) {
             if (leftArray[leftIndex] < rightArray[rightIndex]) {
                 array[i] = leftArray[leftIndex]

@@ -5,17 +5,17 @@ fun heapify(array: ArrayList<Int>, length: Int, i: Int) {
     val rightChild = 2 * i + 2
     var largest = i
 
-    // если левый дочерний больше родительского
+    // if the left child is larger than the parent
     if (leftChild < length && array[leftChild] > array[largest]) {
         largest = leftChild
     }
 
-    // если правый дочерний больше родительского
+    // if the right child is greater than the parent
     if (rightChild < length && array[rightChild] > array[largest]) {
         largest = rightChild
     }
 
-    // если должна произойти замена
+    // if a replacement should occur
     if (largest != i) {
         val temp = array[i]
         array[i] = array[largest]
@@ -27,9 +27,9 @@ fun heapify(array: ArrayList<Int>, length: Int, i: Int) {
 fun heapSort(array: ArrayList<Int>) : ArrayList<Int>{
     if (array.isEmpty()) return array
 
-    // Строим кучу
+    // Building a heap
     val length = array.size
-    // проходим от первого без ответвлений к корню
+    // we pass from the first without branches to the root
     for (i in length / 2 - 1 downTo 0) heapify(array, length, i)
     for (i in length - 1 downTo 0) {
         val temp = array[0]

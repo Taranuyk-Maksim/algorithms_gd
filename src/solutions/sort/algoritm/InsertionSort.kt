@@ -8,8 +8,8 @@ fun insertionSort(array: ArrayList<Int>) : ArrayList<Int> {
             array[j + 1] = array[j]
             j--
         }
-        // в этой точке мы вышли, так что j так же -1
-        // или в первом элементе, где текущий >= a[j]
+        // at this point we went out, so j is also -1
+        // or in the first element where the current >= a[j]
         array[j + 1] = current
     }
     return array

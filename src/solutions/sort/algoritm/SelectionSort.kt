@@ -10,7 +10,7 @@ fun selectionSort(array: ArrayList<Int>) : ArrayList<Int>{
                 minId = j
             }
         }
-        // замена
+        // replacement
         val temp = array[i]
         array[i] = min
         array[minId] = temp
