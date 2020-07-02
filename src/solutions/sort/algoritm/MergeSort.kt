@@ -1,0 +1,48 @@
+package solutions.sort.algoritm
+
+fun mergeSort(array: ArrayList<Int>, left: Int, right: Int) : ArrayList<Int>{
+    if (right <= left) return array
+    val mid = (left + right) / 2
+    mergeSort(array, left, mid)
+    mergeSort(array, mid + 1, right)
+    merge(array, left, mid, right)
+    return array
+}
+
+fun merge(array: ArrayList<Int>, left: Int, mid: Int, right: Int) {
+    // вычисляем длину
+    val lengthLeft = mid - left + 1
+    val lengthRight = right - mid
+
+    // создаем временные подмассивы
+    val leftArray = IntArray(lengthLeft)
+    val rightArray = IntArray(lengthRight)
+
+    // копируем отсортированные массивы во временные
+    for (i in 0 until lengthLeft) leftArray[i] = array[left + i]
+    for (i in 0 until lengthRight) rightArray[i] = array[mid + i + 1]
+
+    // итераторы содержат текущий индекс временного подмассива
+    var leftIndex = 0
+    var rightIndex = 0
+
+    // копируем из leftArray и rightArray обратно в массив
+    for (i in left until right + 1) {
+        // если остаются нескопированные элементы в R и L, копируем минимальный
+        if (leftIndex < lengthLeft && rightIndex < lengthRight) {
+            if (leftArray[leftIndex] < rightArray[rightIndex]) {
+                array[i] = leftArray[leftIndex]
+                leftIndex++
+            } else {
+                array[i] = rightArray[rightIndex]
+                rightIndex++
+            }
+        } else if (leftIndex < lengthLeft) {
+            array[i] = leftArray[leftIndex]
+            leftIndex++
+        } else if (rightIndex < lengthRight) {
+            array[i] = rightArray[rightIndex]
+            rightIndex++
+        }
+    }
+}

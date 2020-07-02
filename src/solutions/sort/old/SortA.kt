@@ -1,4 +1,4 @@
-package solutions.sort
+package solutions.sort.old
 
 import solutions.primes.createFile
 import solutions.primes.readFile

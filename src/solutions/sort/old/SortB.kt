@@ -1,19 +1,19 @@
-package solutions.sort
+package solutions.sort.old
 
 import solutions.primes.createFile
 import solutions.primes.readFile
 
 fun main(args: Array<String>) {
-    val sortE = SortE()
-    sortE.run("sort_e.txt", "out_sort_e.txt")
+    val sortB = SortB()
+    sortB.run("sort_b.txt", "out_sort_b.txt")
 }
 
-class SortE {
+class SortB {
     fun run(inp: String, out: String) {
         createFile(
                 out,
                 createOutputList(
-                        quickSortNumbsSumOfElements(getListNums(readFile(inp)[1])))
+                        quickSortNumbs(getListNums(readFile(inp)[1])))
         )
     }
 

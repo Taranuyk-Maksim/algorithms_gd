@@ -1,4 +1,4 @@
-package solutions.sort
+package solutions.sort.old
 
 import kotlin.math.abs
 

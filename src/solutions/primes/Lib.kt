@@ -41,8 +41,17 @@ fun createFile(name: String, list: ArrayList<String>) {
     f.writeText(list.toString())
 }
 
+fun createFileAndAppendText(name: String, list: List<Int>, typeSort : String) {
+    val f = File("src/outputs/$name")
+    f.appendText(typeSort)
+    f.appendText("\n")
+    f.appendText(list.toString())
+    f.appendText("\n")
+    f.appendText(" ")
+    f.appendText("\n")
+}
 fun createFile(name: String, list: List<Int>) {
     val f = File("src/outputs/$name")
-    f.writeText(list.toString())
+    f.writeText("\n" + list.toString())
 }
 
