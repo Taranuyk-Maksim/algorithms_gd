@@ -1,7 +1,7 @@
 package solutions.sort.wednesday
 
-import solutions.primes.createFile
-import solutions.primes.readFile
+import solutions.createFile
+import solutions.readFile
 
 fun main(args: Array<String>) {
     val sortE = SortE()

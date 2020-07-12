@@ -1,5 +1,8 @@
 package solutions.primes
 
+import solutions.createFile
+import solutions.readFile
+
 fun main(args: Array<String>) {
     val g = G()
     g.run("g.txt", "out_g.txt")

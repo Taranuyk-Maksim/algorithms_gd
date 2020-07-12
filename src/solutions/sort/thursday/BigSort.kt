@@ -1,7 +1,7 @@
 package solutions.sort.thursday
 
-import solutions.primes.createFileAndAppendText
-import solutions.primes.readFile
+import solutions.createFileAndAppendText
+import solutions.readFile
 import solutions.sort.algorithm.*
 import solutions.sort.wednesday.getListIntNumbers
 
