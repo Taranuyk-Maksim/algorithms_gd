@@ -9,6 +9,7 @@ fun main() {
     a.run("recurs_a.txt", "out_recurs_a.txt")
 
 }
+
 class A {
     private var maxWeight = 0
     private var countMaxWeight = 0
@@ -17,6 +18,7 @@ class A {
     fun run(inp: String, out: String) {
         createFile(out, getMaxPath(getMatrix(readFile(inp))))
     }
+
     private fun comperePathWight(weight: Int) {
         if (weight > maxWeight) {
             maxWeight = weight
@@ -26,11 +28,11 @@ class A {
         }
     }
 
-    private fun getMaxPath(inputArray: ArrayList<ArrayList<Int>>) : List<Int> {
+    private fun getMaxPath(inputArray: ArrayList<ArrayList<Int>>): List<Int> {
         for (j in 0.until(inputArray[0].size)) {
-            getWeightPath(inputArray,0,j,0)
+            getWeightPath(inputArray, 0, j, 0)
         }
-        return arrayListOf(maxWeight,countMaxWeight)
+        return arrayListOf(maxWeight, countMaxWeight)
     }
 
     private fun getWeightPath(inputArray: ArrayList<ArrayList<Int>>, i: Int, j: Int, pathSum: Int) {
